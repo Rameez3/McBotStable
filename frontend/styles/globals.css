@@ -1,0 +1,67 @@
+/* frontend/styles/globals.css */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-height: 100vh; /* Ensure body takes full viewport height */
+
+  /* McDonald's Red to Light Grey Gradient Background */
+  /* Using light grey (#f0f0f0) at the bottom often looks softer than pure white */
+  background: linear-gradient(to bottom, #DA291C, #f0f0f0);
+  background-image: url("https://videos.openai.com/vg-assets/assets%2Ftask_01jt96qdc6etvtm76we2rbrxtb%2F1746213287_img_1.webp?st=2025-05-02T17%3A58%3A48Z&se=2025-05-08T18%3A58%3A48Z&sks=b&skt=2025-05-02T17%3A58%3A48Z&ske=2025-05-08T18%3A58%3A48Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=LUs2a8XepC5VL3jr8CT%2BeZiU1DxZ4CsxHzffAreQ6Ng%3D&az=oaivgprodscus");
+  /* Alternative: Red to White */
+  /* background: linear-gradient(to bottom, #DA291C, #FFFFFF); */
+
+  background-attachment: fixed; /* Keeps gradient fixed during scroll */
+  background-size: cover; /* Ensures gradient covers the background area */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box; /* Better element sizing */
+}
+
+/* --- Styles for the New Page Header --- */
+.pageHeader {
+  background-color: #ffffff; /* White background for the header */
+  padding: 10px 25px; /* Vertical and horizontal padding */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow below header */
+  display: flex;
+  align-items: center; /* Vertically center items in the header */
+  height: 60px; /* Fixed height for the header */
+  position: sticky; /* Make header stick to top */
+  top: 0;
+  z-index: 1001; /* Ensure it's above chat widget if they overlap */
+  width: 100%; /* Make header span full width */
+}
+
+.pageLogo {
+  height: 40px; /* Adjust based on your logo's dimensions */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 15px; /* Space between logo and other header content */
+}
+
+/* Optional: Style for a title next to the logo */
+.pageHeader h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #DA291C; /* Red title color */
+  font-weight: bold;
+}
+
+/* Add padding to main content area to prevent overlap with fixed header */
+/* Apply this style to the <main> tag or the primary content container */
+.contentArea {
+  padding-top: 60px; /* Match header height */
+  /* Add other padding as needed */
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+}

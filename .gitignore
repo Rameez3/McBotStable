@@ -1,7 +1,7 @@
 .env
 .env.*
 backend/venv/
-
+g
 node_modules/
 
 npm-debug.log*

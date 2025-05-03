@@ -1,0 +1,172 @@
+/* frontend/styles/ChatUI.module.css - McBot Theme */
+
+/* --- Main Container --- */
+.chatContainer {
+    position: fixed;
+    /* Centered positioning (as per original user code) */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Or use bottom-right positioning if preferred: */
+    /* bottom: 20px; */
+    /* right: 20px; */
+
+    width: 370px;
+    height: 550px; /* Define overall height for the container */
+    background: #ffffff; /* White background for the container itself */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden; /* Important to contain children */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #27251F; /* Default text color */
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh; /* Prevent it from becoming too tall on small screens */
+    transition: all 0.3s ease-in-out; /* Smooth size transitions */
+    z-index: 1000; /* Ensure it's above other content if needed */
+}
+
+/* --- Large Mode --- */
+.large {
+    width: 500px;
+    height: 700px; /* Larger height */
+    max-height: 85vh;
+}
+
+/* --- Hidden State --- */
+.hidden {
+    transform: translate(-50%, -50%) scale(0); /* Adjust transform if using bottom-right */
+    /* transform: scale(0); */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- Top Bar / Header (Chatbot Widget) --- */
+.topBar {
+    background: #DA291C; /* McDonald's Red */
+    color: #FFC72C; /* McDonald's Yellow */
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    flex-shrink: 0; /* Prevent shrinking */
+    cursor: grab;
+    border-bottom: 1px solid #b02013; /* Darker red */
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.icon {
+    cursor: pointer;
+    color: #FFFFFF; /* White icons */
+    transition: opacity 0.2s ease;
+}
+.icon:hover {
+    opacity: 0.8;
+}
+
+/* --- Chat Message Area --- */
+.chatBox {
+    background: #ffffff; /* White chat background */
+    padding: 15px;
+    flex-grow: 1; /* Takes up available vertical space */
+    overflow-y: auto; /* Enable scrolling */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Explicit height removed - relying on flex-grow and container height */
+}
+
+/* Scrollbar Styling */
+.chatBox::-webkit-scrollbar {
+  width: 6px;
+}
+.chatBox::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.chatBox::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.chatBox::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+
+/* --- Input Area --- */
+.inputContainer {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0; /* Prevent shrinking */
+    gap: 10px;
+}
+
+.chatInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+}
+.chatInput:focus {
+    border-color: #DA291C; /* Red border on focus */
+}
+
+/* --- Send Button --- */
+.sendButton {
+    background: #DA291C; /* McDonald's Red */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+.sendButton:hover {
+    background-color: #b02013; /* Darker red on hover */
+}
+
+/* --- Message Bubbles --- */
+/* Customer Message (Right Side) - McDonald's Yellow */
+.customerMessage {
+    background: #FFC72C; /* McDonald's Yellow */
+    color: #27251F; /* Near black text */
+    padding: 10px 15px;
+    border-radius: 18px 18px 5px 18px;
+    max-width: 80%;
+    align-self: flex-end;
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+/* Bot Message (Left Side) - Light Grey */
+.botMessage {
+    background: #e9ecef; /* Light neutral grey */
+    color: #27251F; /* Near black text */
+    padding: 10px 15px;
+    border-radius: 18px 18px 18px 5px;
+    max-width: 80%;
+    align-self: flex-start;
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
