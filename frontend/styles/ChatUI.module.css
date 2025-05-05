@@ -1,4 +1,3 @@
-/* frontend/styles/ChatUI.module.css - McBot Theme */
 
 /* --- Main Container --- */
 .chatContainer {
@@ -11,49 +10,47 @@
     /* bottom: 20px; */
     /* right: 20px; */
 
-    width: 370px;
-    height: 550px; /* Define overall height for the container */
-    background: #ffffff; /* White background for the container itself */
+    width: 500px;
+    height: 550px; 
+    background: #ffffff; 
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    overflow: hidden; /* Important to contain children */
+    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #27251F; /* Default text color */
+    color: #27251F;
     display: flex;
     flex-direction: column;
-    max-height: 80vh; /* Prevent it from becoming too tall on small screens */
-    transition: all 0.3s ease-in-out; /* Smooth size transitions */
-    z-index: 1000; /* Ensure it's above other content if needed */
+    max-height: 80vh; 
+    transition: all 0.3s ease-in-out; 
+    z-index: 1000; 
 }
 
-/* --- Large Mode --- */
+
 .large {
     width: 500px;
-    height: 700px; /* Larger height */
+    height: 700px;
     max-height: 85vh;
 }
 
-/* --- Hidden State --- */
 .hidden {
-    transform: translate(-50%, -50%) scale(0); /* Adjust transform if using bottom-right */
-    /* transform: scale(0); */
+    transform: translate(-50%, -50%) scale(0); 
     opacity: 0;
     pointer-events: none;
 }
 
 /* --- Top Bar / Header (Chatbot Widget) --- */
 .topBar {
-    background: #DA291C; /* McDonald's Red */
-    color: #FFC72C; /* McDonald's Yellow */
+    background: #DA291C; 
+    color: #FFC72C;
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.1em;
     font-weight: bold;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0; 
     cursor: grab;
-    border-bottom: 1px solid #b02013; /* Darker red */
+    border-bottom: 1px solid #b02013; 
 }
 
 .buttons {
@@ -63,7 +60,7 @@
 
 .icon {
     cursor: pointer;
-    color: #FFFFFF; /* White icons */
+    color: #FFFFFF; 
     transition: opacity 0.2s ease;
 }
 .icon:hover {
@@ -72,14 +69,13 @@
 
 /* --- Chat Message Area --- */
 .chatBox {
-    background: #ffffff; /* White chat background */
+    background: #ffffff; 
     padding: 15px;
-    flex-grow: 1; /* Takes up available vertical space */
-    overflow-y: auto; /* Enable scrolling */
+    flex-grow: 1; 
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
     gap: 12px;
-    /* Explicit height removed - relying on flex-grow and container height */
 }
 
 /* Scrollbar Styling */
@@ -100,12 +96,12 @@
 
 
 /* --- Input Area --- */
-.inputContainer {
+.inputArea {
     display: flex;
     padding: 15px;
     background: white;
     border-top: 1px solid #e0e0e0;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0; 
     gap: 10px;
 }
 
@@ -119,12 +115,12 @@
     transition: border-color 0.2s ease;
 }
 .chatInput:focus {
-    border-color: #DA291C; /* Red border on focus */
+    border-color: #DA291C; 
 }
 
 /* --- Send Button --- */
 .sendButton {
-    background: #DA291C; /* McDonald's Red */
+    background: #DA291C; 
     color: white;
     border: none;
     border-radius: 50%;
@@ -141,14 +137,13 @@
     transition: background-color 0.2s ease;
 }
 .sendButton:hover {
-    background-color: #b02013; /* Darker red on hover */
+    background-color: #b02013; 
 }
 
 /* --- Message Bubbles --- */
-/* Customer Message (Right Side) - McDonald's Yellow */
 .customerMessage {
-    background: #FFC72C; /* McDonald's Yellow */
-    color: #27251F; /* Near black text */
+    background: #FFC72C; 
+    color: #27251F; 
     padding: 10px 15px;
     border-radius: 18px 18px 5px 18px;
     max-width: 80%;
@@ -160,8 +155,8 @@
 
 /* Bot Message (Left Side) - Light Grey */
 .botMessage {
-    background: #e9ecef; /* Light neutral grey */
-    color: #27251F; /* Near black text */
+    background: #e9ecef;
+    color: #27251F;
     padding: 10px 15px;
     border-radius: 18px 18px 18px 5px;
     max-width: 80%;
