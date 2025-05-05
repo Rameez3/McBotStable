@@ -1,20 +1,5 @@
 services:
-  # 1) Front‑end  (SSR build; change if you export statically)
-  - type: web
-    name: mcbot-frontend
-    env: node
-    plan: free                # or 'starter'
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    startCommand: npm run start            # Next.js serves on $PORT
-    envVars:
-      - key: NEXT_PUBLIC_API_URL
-        fromService:
-          type: web
-          name: mcbot-api
-          property: url          # auto‑injects https://mcbot-api.onrender.com
-
-  # 2) Back‑end
+  # 1) Back‑end -------------------------------------------------------------
   - type: web
     name: mcbot-api
     env: python
@@ -23,7 +8,29 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: GOOGLE_API_KEY           # fill in Render dashboard
-      - key: MONGO_USER               # "
-      - key: MONGO_PASSWORD           # "
-      - key: MONGO_CLUSTER_URL        # "
+      - key: GOOGLE_API_KEY
+        sync: false          # Render will ask for the value
+      - key: MONGO_USER
+        sync: false
+      - key: MONGO_PASSWORD
+        sync: false
+      - key: MONGO_CLUSTER_URL
+        sync: false
+
+  # 2) Front‑end -----------------------------------------------------------
+  - type: web
+    name: mcbot-frontend
+    env: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      # Render injects the API’s internal host:port value.
+      # Your Next.js code can build the full URL with:
+      #   const apiBase = `https://${process.env.NEXT_PUBLIC_API_HOSTPORT}`;
+      - key: NEXT_PUBLIC_API_HOSTPORT
+        fromService:
+          type: web
+          name: mcbot-api
+          property: hostport
