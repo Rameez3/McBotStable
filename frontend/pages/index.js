@@ -38,7 +38,7 @@ export default function Chatbot() {
     setInput("");
 
     try {
-      const resp = await fetch(`${API_BASE}/chat`, {
+      const resp = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
