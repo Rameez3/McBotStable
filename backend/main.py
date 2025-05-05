@@ -28,8 +28,8 @@ else:
         GOOGLE_API_KEY = None
 
 MONGO_PASSWORD = os.getenv("MONGO_PASSWORD")
-MONGO_USER = os.getenv("MONGO_USER", "rk03")
-MONGO_CLUSTER_URL = os.getenv("MONGO_CLUSTER_URL", "userorders.lppcg4s.mongodb.net")
+MONGO_USER = os.getenv("MONGO_USER")
+MONGO_CLUSTER_URL = os.getenv("MONGO_CLUSTER_URL")
 
 mongo_client = None
 db = None
