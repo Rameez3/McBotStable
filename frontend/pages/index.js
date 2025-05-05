@@ -37,6 +37,7 @@ export default function Chatbot() {
     setMessages((prev) => [...prev, { text: trimmed, sender: "customer" }]);
     setInput("");
 
+    console.log("API_BASE =", API_BASE);
     try {
       const resp = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
