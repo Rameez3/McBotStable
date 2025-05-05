@@ -10,10 +10,26 @@ from typing import Dict, List, Optional, Any
 import google.generativeai as genai
 import traceback
 from dotenv import load_dotenv
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
 app = FastAPI()
+
+origins = [
+    "https://mcbot-frontend.onrender.com", 
+    "http://localhost:3000",               
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,      
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
